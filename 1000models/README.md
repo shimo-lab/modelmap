@@ -26,8 +26,13 @@ A JSONL file containing 10,000 text chunks from the Pile dataset. Each line in t
 
 ### Log-Likelihood
 
-- [`log-likelihood_1018.pkl`](data/log-likelihood/log-likelihood_1018.pkl)  
+- [`raw_log-likelihood_1018.pkl`](data/log-likelihood/raw_log-likelihood_1018.pkl)  
 Log-likelihood data for 1,018 language models calculated on the texts-10k-pile.jsonl dataset.  
+Usage examples can be found in [load_log-likelihood.ipynb](data/log-likelihood/load_log-likelihood.ipynb).
+
+- [`clipped_log-likelihood_1018.pkl`](data/log-likelihood/clipped_log-likelihood_1018.pkl)  
+Log-likelihood data for 1,018 language models calculated on the texts-10k-pile.jsonl dataset.  
+This data is derived by clipping the **bottom 2%** of the values from the `raw_log-likelihood_1018.pkl` data.  
 Usage examples can be found in [load_log-likelihood.ipynb](data/log-likelihood/load_log-likelihood.ipynb).
 
 
