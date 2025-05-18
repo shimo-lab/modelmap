@@ -5,7 +5,7 @@
 
 **Mapping 1,000+ Language Models via the Log-Likelihood Vector**  
 Momose Oyama, Hiroaki Yamagiwa, Yusuke Takase, Hidetoshi Shimodaira  
-[arXiv:2502.16173](https://arxiv.org/abs/2502.16173)
+[arXiv:2502.16173](https://arxiv.org/abs/2502.16173) &#124; accepted to ACL 2025 main
 
 ## Data
 
