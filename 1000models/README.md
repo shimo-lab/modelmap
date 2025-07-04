@@ -40,6 +40,8 @@ Usage examples can be found in [load_log-likelihood.ipynb](data/log-likelihood/l
 - [`calculate-log-likelihood.ipynb`](codes/calculate-log-likelihood.ipynb)  
 Jupyter notebook containing sample code for calculating log-likelihood.
 
+- For code that predicts model performance from model coordinates (Section 5) and generates the LaTeX file listing 1,018 models (Appendix L), see [code_for_Section_5_and_Appendix_L/](code_for_Section_5_and_Appendix_L/).
+
 
 ## Examples
 

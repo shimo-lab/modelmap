@@ -1,0 +1,15 @@
+Cython>=3.1.0
+arxiv>=2.2.0
+fire>=0.7.0
+huggingface_hub>=0.31.1
+ipykernel>=6.29.5
+isort>=6.0.1
+jupyterlab>=4.4.2
+matplotlib>=3.10.3
+numpy>=1.26.3
+pandas>=2.2.3
+protobuf>=6.30.2
+scikit-learn>=1.6.1
+scipy>=1.10.1
+tqdm>=4.67.1
+transformers>=4.49.0

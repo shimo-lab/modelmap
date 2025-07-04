@@ -1,0 +1,1 @@
+![img](https://huggingface.co/circulus/Llama-2-7b-orca-v1/resolve/main/orca.jpg)

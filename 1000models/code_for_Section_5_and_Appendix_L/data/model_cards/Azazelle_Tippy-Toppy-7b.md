@@ -1,0 +1,27 @@
+# Model Card for Tippy-Toppy-7b
+<!-- Provide a quick summary of what the model is/does. -->
+DARE merge intended to be build on Toppy-M-7b.
+
+.yaml file for mergekit
+```.yaml:
+models:
+  - model: mistralai/Mistral-7B-v0.1
+    # no parameters necessary for base model
+  - model: Undi95/Toppy-M-7B #175
+    parameters:
+      weight: 0.54
+      density: 0.81
+  - model: PistachioAlt/Noromaid-Bagel-7B-Slerp #75
+    parameters:
+      weight: 0.23
+      density: 0.61
+  - model: OpenPipe/mistral-ft-optimized-1227 #100
+    parameters:
+      weight: 0.31
+      density: 0.68
+merge_method: dare_ties
+base_model: mistralai/Mistral-7B-v0.1
+parameters:
+  int8_mask: true
+dtype: bfloat16
+```

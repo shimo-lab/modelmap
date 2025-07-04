@@ -1,0 +1,1 @@
+NeverSleep/Noromaid-7b-v0.1.1 trained until crash on DPO-v2 dataset (made private until I can figure it out) then the same LoRA state was trained from that point on 2 epochs of the NSFW_DPO-v1 dataset
