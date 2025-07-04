@@ -1,0 +1,2 @@
+
+This variant of the model has undergone reinforcement learning (RL) fine-tuning and is based on teknium/OpenHermes-2.5-Mistral-7B. The fine-tuning process utilized a preference dataset derived from HuggingFace's no robots dataset, incorporating Differential Privacy Optimization (DPO) techniques.
