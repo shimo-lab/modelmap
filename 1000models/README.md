@@ -42,6 +42,7 @@ Jupyter notebook containing sample code for calculating log-likelihood.
 
 - For code that predicts model performance from model coordinates (Section 5) and generates the LaTeX file listing 1,018 models (Appendix L), see [code_for_Section_5_and_Appendix_L/](code_for_Section_5_and_Appendix_L/).
 
+- For the code for the experiments on weight interpolation (Section 6.3 and Appendix J), see [code_for_weight_interpolation](code_for_weight_interpolation/).
 
 ## Examples
 
