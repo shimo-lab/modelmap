@@ -39,6 +39,7 @@ Using only texts selected through LS sampling allows new models to be efficientl
 - [`modeldata_1018.pkl`](./data/modeldata_1018.pkl) is shared with the one in [modelmap/1000models](../1000models/data/model-metadata).
 - [`tsne_Q.pkl`](./data/tsne_Q.pkl) contains the t-SNE coordinates of the 1018 models. The procedure to compute them is described in [`tsne_Q.py`](./tsne_Q.py).
 - The data in [`./data/uniq-idx-weight/`](./data/uniq-idx-weight/) summarizes the results of each resampling method. These can be reproduced by running [`uniq_idx_weight.py`](./uniq_idx_weight.py).
+- The model map with sampling error is visualized in [`figure1.ipynb`](./figure1.ipynb).
 
 
 ## 📚 Citation
