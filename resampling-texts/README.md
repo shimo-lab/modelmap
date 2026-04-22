@@ -32,7 +32,14 @@ Using only texts selected through LS sampling allows new models to be efficientl
 <img src="figures/fig3.png" alt="fig3" style="width:90%">
 </p>
 
+### Prediction of Model's Performance (Figure4)
 
+Using model coordinates from unique texts, we predict the average performance across six downstream tasks with ridge regression.
+See [`code_for_prediction/`](./code_for_prediction/) for details.
+
+<p align="center">
+<img src="figures/fig4.png" alt="fig4" style="width:50%">
+</p>
 
 ## 🦉 Misc.
 

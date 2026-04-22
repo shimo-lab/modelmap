@@ -1,0 +1,14 @@
+[project]
+name = "code-for-prediction"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "fire",
+    "matplotlib",
+    "tqdm",
+    "jinja2>=3.1.6",
+]
