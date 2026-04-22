@@ -14,3 +14,7 @@
 * **Likelihood Variance as Text Importance for Resampling Texts to Map Language Models**  
 Momose Oyama, Ryo Kishino, Hiroaki Yamagiwa, Hidetoshi Shimodaira  
 [arXiv:2505.15428](https://arxiv.org/abs/2505.15428) &#124; accepted to EMNLP 2025 Findings &#124; **[Data & Code](./resampling-texts/README.md)**
+
+* **Establishing a Scale for Kullback-Leibler Divergence in Language Models Across Various Settings**  
+Ryo Kishino, Yusuke Takase, Momose Oyama, Hiroaki Yamagiwa, Hidetoshi Shimodaira  
+[arXiv:2505.15353](https://arxiv.org/abs/2505.15353) &#124; accepted to ACL 2026 Findings &#124; **[Data & Code](./kl-scale/README.md)**
