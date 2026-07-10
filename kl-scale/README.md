@@ -10,10 +10,6 @@ Ryo Kishino, Yusuke Takase, Momose Oyama, Hiroaki Yamagiwa, Hidetoshi Shimodaira
 
 ## Setup
 
-The log-likelihood data under `data/logp/` is managed with Git LFS. Install
-Git LFS before cloning this repository, or run `git lfs pull` after installing
-it in an existing clone.
-
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -37,8 +33,6 @@ data/
 
 Treat `data/` as read-only. All generated files are written under `output/`;
 the reproduction scripts do not need to load language models.
-The log-likelihood arrays are stored as `float32` to keep the repository
-compact; all KL calculations promote them to `float64` before arithmetic.
 
 ## Reproduce Figures
 
@@ -149,13 +143,27 @@ log-likelihood vectors are already included in
 ## Citation
 
 ```bibtex
-@misc{kishino2026establishingscalekullbackleiblerdivergence,
-  title={Establishing a Scale for Kullback-Leibler Divergence in Language Models Across Various Settings},
-  author={Ryo Kishino and Yusuke Takase and Momose Oyama and Hiroaki Yamagiwa and Hidetoshi Shimodaira},
-  year={2026},
-  eprint={2505.15353},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2505.15353}
+@inproceedings{kishino-etal-2026-establishing,
+    title = "Establishing a Scale for {K}ullback-{L}eibler Divergence in Language Models Across Various Settings",
+    author = "Kishino, Ryo  and
+      Takase, Yusuke  and
+      Oyama, Momose  and
+      Yamagiwa, Hiroaki  and
+      Shimodaira, Hidetoshi",
+    editor = "Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-acl.1163/",
+    doi = "10.18653/v1/2026.findings-acl.1163",
+    pages = "23223--23248",
+    ISBN = "979-8-89176-395-1",
+    abstract = "Log-likelihood vectors define a common space for comparing language models as probability distributions, enabling unified comparisons across heterogeneous settings. We extend this framework to training checkpoints and intermediate layers, and establish a consistent scale for KL divergence across pretraining, model size, random seeds, quantization, fine-tuning, and layers. Analysis of Pythia pretraining trajectories further shows that changes in log-likelihood space, as measured by the scaling behavior of KL divergence, are much smaller than in weight space, resulting in subdiffusive learning trajectories and early stabilization of language-model behavior despite weight drift."
 }
+
 ```
