@@ -1,0 +1,9 @@
+bitsandbytes==0.49.2
+huggingface-hub==1.18.0
+matplotlib==3.10.9
+numpy==2.4.6
+scikit-learn==1.6.1
+torch==2.12.0
+tqdm==4.68.2
+transformers==5.10.2
+tuned-lens==0.2.0
