@@ -23,7 +23,7 @@ Theorem 2 shows that the variance of the difference of log-likelihoods approxima
 
 ## Shimodaira and Cao (1998)
 
-> Hidetoshi Shimodaira and Ying Cao. *A Graphical Technique for Model Selection Diagnosis*. Research Memorandum 680, Institute of Statistical Mathematics, Tokyo, Japan, 1998. | [PDF](./1998-Shimodaira-Cao-rm680.pdf) | [Research Memo Series Index (ISM)](https://www.ism.ac.jp/editsec/resmemo-e.html)
+> Hidetoshi Shimodaira and Ying Cao. *A Graphical Technique for Model Selection Diagnosis*. Research Memorandum 680, Institute of Statistical Mathematics, Tokyo, Japan, 1998. | [PDF](./1998-Shimodaira-Cao-rm680_complete.pdf) | [Research Memo Series Index (ISM)](https://www.ism.ac.jp/editsec/resmemo-e.html)
 
 This work defines model maps based on log-likelihood vectors and presents examples from regression analysis and molecular phylogenetics. Part of this paper was later published as [Shimodaira (2001)](https://doi.org/10.1081/STA-100105696).
 
