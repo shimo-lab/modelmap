@@ -3,25 +3,167 @@
 ![fig3](figures/fig3.png)
 
 ## Paper
+
 **Establishing a Scale for Kullback-Leibler Divergence in Language Models Across Various Settings**  
 Ryo Kishino, Yusuke Takase, Momose Oyama, Hiroaki Yamagiwa, Hidetoshi Shimodaira  
-[arXiv:2505.15353](https://arxiv.org/abs/2505.15353) &#124; accepted to ACL 2026 Findings
+[arXiv:2505.15353](https://arxiv.org/abs/2505.15353) | accepted to ACL 2026 Findings
 
+## Setup
 
-## Code
-The source code is being organized and will be available soon. 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
 
+## Data
+
+The released files under `data/` contain the inputs needed to reproduce all
+figures:
+
+```text
+data/
+├── texts.json
+├── logp/                  # log-likelihood vectors
+├── model_info/            # model names, types, and parent links
+├── tsne/                  # cached coordinates for Figures 1 and 2
+└── weight_distance/       # cached Pythia weight distances
+```
+
+Treat `data/` as read-only. All generated files are written under `output/`;
+the reproduction scripts do not need to load language models.
+
+## Reproduce Figures
+
+Run the following commands from this directory. Each script reads the released
+files under `data/` and writes its output under `output/`.
+
+### Figure 1: Pretraining Trajectories
+
+![Figure 1: Pythia pretraining trajectories](figures/fig1.png)
+
+```bash
+python fig1.py --output-path output/fig1.png
+```
+
+Pythia pretraining trajectories across model sizes and random seeds, using the
+released t-SNE coordinates.
+
+### Figure 2: Quantization, Fine-tuning, and Layers
+
+![Figure 2: Model maps across three settings](figures/fig2.png)
+
+```bash
+python fig2.py --output-path output/fig2.png
+```
+
+Model maps for 8-bit quantization, fine-tuning lineages, and intermediate
+layers.
+
+### Figure 3: KL Divergence Scale
+
+![Figure 3: KL-divergence distributions](figures/fig3.png)
+
+```bash
+python fig3.py --output-path output/fig3.png
+```
+
+KL-divergence distributions across the ten settings analyzed in the paper.
+
+### Figure 4: KL During Pretraining
+
+![Figure 4: KL divergence during pretraining](figures/fig4.png)
+
+```bash
+python fig4.py --output-path output/fig4.png
+```
+
+KL divergence between consecutive Pythia checkpoints during and after warmup.
+
+### Figure 5: Diffusion Exponents
+
+![Figure 5: Diffusion in log-likelihood and weight spaces](figures/fig5.png)
+
+```bash
+python fig5.py --output-path output/fig5.png
+```
+
+Squared distances and local diffusion exponents in log-likelihood and weight
+spaces.
+
+Figures 1 and 2 can also recompute t-SNE directly from the released
+log-likelihood vectors:
+
+```bash
+python fig1.py --recompute-tsne --output-path output/fig1_recomputed.png
+python fig2.py --recompute-tsne --output-path output/fig2_recomputed.png
+```
+
+Recomputed embeddings might differ from the cached coordinates across
+scikit-learn versions because t-SNE is a numerical optimization procedure.
+
+To save newly computed coordinates separately from the released cache:
+
+```bash
+python src/tsne.py --figure 1 --output-dir output/tsne
+python src/tsne.py --figure 2 --output-dir output/tsne
+```
+
+## Optional Recalculation
+
+Recalculating log-likelihoods or parameter distances is expensive and is not
+required for figure reproduction. These scripts load Hugging Face models and
+write to `output/` by default:
+
+```bash
+export HF_TOKEN=...
+export HF_CACHE_DIR=/path/to/huggingface/cache
+
+python src/calc_logp_pretraining.py
+python src/calc_logp_quantization.py --quantize-bit 8
+python src/calc_logp_quantization.py --quantize-bit 4
+python src/calc_logp_layer.py
+python src/calc_weight_distance.py --model-size 410m
+```
+
+`src/calc_logp_ft.py` retrieves fine-tuning parent metadata. The corresponding
+log-likelihood vectors are already included in
+`data/logp/oyama2025_logp.pkl`.
+
+## Code Layout
+
+- `fig1.py` to `fig5.py`: figure entry points
+- `src/preprocess.py`: Pythia preprocessing and text-outlier removal
+- `src/tsne.py`: t-SNE
+- `src/calc_kl.py`: KL distributions across various settings
+- `src/metrics.py`: shared KL divergence calculation
+- `src/pythia.py`: shared Pythia model and checkpoint definitions
 
 ## Citation
-If you find our code useful in your research, please cite our paper:
-```
-@misc{kishino2026establishingscalekullbackleiblerdivergence,
-      title={Establishing a Scale for Kullback-Leibler Divergence in Language Models Across Various Settings}, 
-      author={Ryo Kishino and Yusuke Takase and Momose Oyama and Hiroaki Yamagiwa and Hidetoshi Shimodaira},
-      year={2026},
-      eprint={2505.15353},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2505.15353}, 
+
+```bibtex
+@inproceedings{kishino-etal-2026-establishing,
+    title = "Establishing a Scale for {K}ullback-{L}eibler Divergence in Language Models Across Various Settings",
+    author = "Kishino, Ryo  and
+      Takase, Yusuke  and
+      Oyama, Momose  and
+      Yamagiwa, Hiroaki  and
+      Shimodaira, Hidetoshi",
+    editor = "Liakata, Maria  and
+      Moreira, Viviane P.  and
+      Zhang, Jiajun  and
+      Jurgens, David",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-acl.1163/",
+    doi = "10.18653/v1/2026.findings-acl.1163",
+    pages = "23223--23248",
+    ISBN = "979-8-89176-395-1",
+    abstract = "Log-likelihood vectors define a common space for comparing language models as probability distributions, enabling unified comparisons across heterogeneous settings. We extend this framework to training checkpoints and intermediate layers, and establish a consistent scale for KL divergence across pretraining, model size, random seeds, quantization, fine-tuning, and layers. Analysis of Pythia pretraining trajectories further shows that changes in log-likelihood space, as measured by the scaling behavior of KL divergence, are much smaller than in weight space, resulting in subdiffusive learning trajectories and early stabilization of language-model behavior despite weight drift."
 }
+
 ```
