@@ -6,7 +6,7 @@
 
 **Establishing a Scale for Kullback-Leibler Divergence in Language Models Across Various Settings**  
 Ryo Kishino, Yusuke Takase, Momose Oyama, Hiroaki Yamagiwa, Hidetoshi Shimodaira  
-[arXiv:2505.15353](https://arxiv.org/abs/2505.15353) | accepted to ACL 2026 Findings
+[arXiv:2505.15353](https://arxiv.org/abs/2505.15353) | [ACL 2026 Findings](https://aclanthology.org/2026.findings-acl.1163/)
 
 ## Setup
 

@@ -3,7 +3,7 @@
 ## 📄 Paper
 **Likelihood Variance as Text Importance for Resampling Texts to Map Language Models**  
 Momose Oyama, Ryo Kishino, Hiroaki Yamagiwa, Hidetoshi Shimodaira  
-[arXiv:2505.15428](https://arxiv.org/abs/2505.15428) &#124; accepted to EMNLP 2025 Findings
+[arXiv:2505.15428](https://arxiv.org/abs/2505.15428) &#124; [EMNLP 2025 Findings](https://aclanthology.org/2025.findings-emnlp.502/)
 
 ## 🔑 Key Results
 
