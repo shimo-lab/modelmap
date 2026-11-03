@@ -119,6 +119,8 @@ def main():
     model_names = [tmp["model_name"] for tmp in modeldata]
 
     md_dir = Path("data/model_cards")
+    # used when model cards are absent
+    card_bibtex_dir = Path("data/model_card_bibtex")
     model_name2bibtex_list = {}
     for model_name in model_names:
         bibtex_list = []
@@ -133,10 +135,14 @@ def main():
 
         file_name = model_name2file_name(model_name)
         md_path = md_dir / f"{file_name}.md"
+        card_bibtex_path = card_bibtex_dir / f"{file_name}.bib"
         if md_path.exists():
             with open(md_path, "r") as f:
                 md_text = f.read()
             bibtex_list += extract_bibtex_entries(md_text)
+        elif card_bibtex_path.exists():
+            with open(card_bibtex_path, "r") as f:
+                bibtex_list += f.read().split(SEP)
 
         if model_name == "pankajmathur/orca_mini_v3_7b":
             # pankajmathur/orca_mini_v3_7b use Llama 2, but bibtex is llama,

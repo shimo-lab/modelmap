@@ -1,1 +1,0 @@
-https://wandb.ai/open-assistant/supervised-finetuning/runs/770a0t41 (at 2k steps)
