@@ -54,8 +54,10 @@ $ python src_pred_perform/eval_and_plot_meanlogp.py
 ### Step 1 Download model cards from the Hugging Face Hub
 
 To obtain fresh model cards, run `src_model_list/step1_download_model_card.py`.
+Model cards are not included in this repository.
 
 🚨 Note: This step is unnecessary when reproducing the model list already included with the paper.
+Step 3 then uses [data/model_card_bibtex/](data/model_card_bibtex/), the BibTeX entries extracted from the model cards used in the paper.
 
 ### Step 2: Create BibTeX entries using the arXiv API
 
